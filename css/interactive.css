@@ -1,0 +1,98 @@
+/*
+Global Styles
+*/
+#interactiveWrapper {
+	position: relative;
+	width: 1920px;
+	height: 1080px;
+	margin: 0 auto;
+}
+#view {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	overflow: hidden;
+}
+#slider {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 11160px;
+	height: 1080px;
+}
+#interactiveHead {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 150px;
+	z-index: 100;
+	display: none;
+}
+.slide {
+	position: absolute;
+	top: 0px;
+	width: 1860px;
+	height: 1080px;
+}
+.slide .content {
+	position: absolute;
+	top: 150px;
+	left: 0px;
+}
+/*
+Color Palette
+*/
+
+/*
+Slide 1
+*/
+#s1 {
+	left: 0px;
+	width: 1920px;
+	background: url('../img/bg-splash.svg');
+}
+/*
+Slide 2
+*/
+#s2 {
+	left: 1920px;
+	background-color: #e0c2a1;
+}
+/*
+Slide 3
+*/
+#s3 {
+	left: 3780px;
+	background-color: #c0c2a1;
+}
+/*
+Slide 4
+*/
+#s4 {
+	left: 5640px;
+	background-color: #e0c2c1;
+}
+/*
+Slide 5
+*/
+#s5 {
+	left: 7500px;
+	background-color: #e0a2a1;
+}
+/*
+Slide 6
+*/
+#s6 {
+	left: 9360px;
+	background-color: #f0cbaa;
+}
+/*
+Slide 7
+*/
+#s7 {
+	left: 11160px;
+	background-color: #fec6a1;
+}
