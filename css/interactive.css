@@ -1,98 +1,476 @@
 /*
+Fonts
+*/
+
+@font-face {
+	font-family: DINNextLTPro-Regular;
+	src: url(../fonts/DINNextLTPro-Regular.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-Bold;
+	src: url(../fonts/DINNextLTPro-Bold.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-Heavy;
+	src: url(../fonts/DINNextLTPro-Heavy.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-Black;
+	src: url(../fonts/DINNextLTPro-Black.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-Light;
+	src: url(../fonts/DINNextLTPro-Light.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-UltraLight;
+	src: url(../fonts/DINNextLTPro-UltraLight.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-Italic;
+	src: url(../fonts/DINNextLTPro-Italic.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-BoldItalic;
+	src: url(../fonts/DINNextLTPro-BoldItalic.otf);
+}
+@font-face {
+	font-family: DINNextLTPro-LightItalic;
+	src: url(../fonts/DINNextLTPro-LightItalic.otf);
+}
+
+/*
+Color Palette
+*/
+
+.r-bg {
+	background-color: red;
+}
+.b-bg {
+	background-color: blue;
+}
+.p-bg {
+	background-color: purple;
+}
+.t-bg {
+	background-color: turquoise;
+}
+.y-bg {
+	background-color: yellow;
+}
+.w {
+	color: white;
+}
+.b {
+	color: blue;
+}
+
+/*
 Global Styles
 */
+
 #interactiveWrapper {
 	position: relative;
 	width: 1920px;
 	height: 1080px;
 	margin: 0 auto;
-}
-#view {
-	position: relative;
-	top: 0px;
-	left: 0px;
-	width: 1920px;
-	height: 1080px;
-	overflow: hidden;
-}
-#slider {
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 11160px;
-	height: 1080px;
-}
-#interactiveHead {
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	width: 1920px;
-	height: 150px;
-	z-index: 100;
-	display: none;
+	font-family: DINNextLTPro-Regular;
 }
 .slide {
 	position: absolute;
 	top: 0px;
-	width: 1860px;
+	left: 0px;
+	width: 1920px;
 	height: 1080px;
+	background-color: rgba(255, 255, 255, 1);
+	display: none;
+	overflow: hidden;
+}
+.slide.active {
+	display: block;
+}
+.slide .head {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 150px;
+	z-index: 10;
+	-webkit-box-shadow: 0px 8px 48px 0px #ccc;
+	-moz-box-shadow: 0px 8px 48px 0px #ccc;
+	-ms-box-shadow: 0px 8px 48px 0px #ccc;
+	-o-box-shadow: 0px 8px 48px 0px #ccc;
+	box-shadow: 0px 8px 48px 0px #ccc;
+}
+.slide .background-img {
+	position: absolute;
+	top: 150px;
+	width: 1800px;
+	height: 930px;
+}
+.slide .sections {
+	position: absolute;
+	top: 150px;
+	left: 0px;
+	width: 1920px;
+	height: 930px;
+	z-index: 100;
+	font-size: 18px;
+}
+.slide .sections .section {
+	position: absolute;
+	top: 0px;
+	width: 30px;
+	height: 930px;
+}
+.slide .sections .section .title {
+	position: absolute;
+	top: 450px;
+	left: -450px;
+	width: 200px;
+	height: 24px;
+	padding: 6px 0 0 730px;
+	text-align: left;
+	-webkit-transform: rotate(-90deg);
 }
 .slide .content {
 	position: absolute;
 	top: 150px;
-	left: 0px;
 }
-/*
-Color Palette
-*/
+.slide .content .header {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1668px;
+	height: 80px;
+	padding: 36px 0 0 132px;
+	font-size: 40px;
+}
+.slide .content .body {
+	position: absolute;
+	top: 116px;
+	left: 0px;
+	width: 1800px;
+	height: 600px;
+}
+.slide .content .navigation {
+	position: absolute;
+	top: 716px;
+	left: 0px;
+	width: 1800px;
+	height: 214px;
+}
+.button {
+	font-size: 24px;
+	cursor: pointer;
+}
 
 /*
 Slide 1
 */
+
 #s1 {
-	left: 0px;
-	width: 1920px;
-	background: url('../img/bg-splash.svg');
+	background: url('../img/bg-splash.png');
 }
+
 /*
 Slide 2
 */
+
 #s2 {
-	left: 1920px;
-	background-color: #e0c2a1;
+
 }
+#s2 .background-img {
+	left: 0px;
+}
+#s2 .sections .background {
+	left: 1800px;
+}
+#s2 .sections .aircraft-type {
+	left: 1830px;
+}
+#s2 .sections .features {
+	left: 1860px;
+}
+#s2 .sections .solution {
+	left: 1890px;
+}
+#s2 .content {
+	left: 0px;
+	width: 1800px;
+	height: 930px;
+}
+#s2 .content .body {
+
+}
+#s2 .content .body .third {
+	position: absolute;
+	width: 440px;
+	height: 446px;
+	top: 80px;
+}
+#s2 .content .body .third:nth-child(1) {
+	left: 110px;
+}
+#s2 .content .body .third:nth-child(2) {
+	position: absolute;
+	left: 680px;
+}
+#s2 .content .body .third:nth-child(3) {
+	position: absolute;
+	left: 1250px;
+}
+#s2 .content .body .third .image {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 440px;
+	height: 346px;
+}
+#s2 .content .body .third .name {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 438px;
+	height: 62px;
+	padding: 36px 0 0 0;
+	text-align: center;
+	border: 1px solid purple;
+}
+
 /*
 Slide 3
 */
+
 #s3 {
-	left: 3780px;
-	background-color: #c0c2a1;
+
 }
+#s3 .background-img {
+	left: 30px;
+}
+#s3 .sections .objective {
+	left: 0px;
+}
+#s3 .sections .aircraft-type {
+	left: 1830px;
+}
+#s3 .sections .features {
+	left: 1860px;
+}
+#s3 .sections .solution {
+	left: 1890px;
+}
+#s3 .content {
+	left: 30px;
+	width: 1800px;
+	height: 930px;
+}
+#s3 .content .body {
+
+}
+#s3 .content .body .third {
+	position: absolute;
+	width: 440px;
+	height: 446px;
+	top: 80px;
+}
+#s3 .content .body .third:nth-child(1) {
+	left: 110px;
+}
+#s3 .content .body .third:nth-child(2) {
+	position: absolute;
+	left: 678px;
+}
+#s3 .content .body .third:nth-child(3) {
+	position: absolute;
+	left: 1246px;
+}
+#s3 .content .body .third .button {
+	position: absolute;
+	left: 0px;
+	width: 440px;
+	height: 134px;
+}
+#s3 .content .body .third .button:nth-child(1) {
+	top: 0px;
+}
+#s3 .content .body .third .button:nth-child(2) {
+	top: 156px;
+}
+#s3 .content .body .third .button:nth-child(3) {
+	top: 312px;
+}
+#s3 .content .body .third .button .image {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 160px;
+	height: 134px;
+}
+#s3 .content .body .third .button .name {
+	position: absolute;
+	top: 0px;
+	left: 160px;
+	width: 248px;
+	height: 86px;
+	padding: 48px 0 0 32px;
+	text-align: left;
+}
+
 /*
 Slide 4
 */
+
 #s4 {
-	left: 5640px;
-	background-color: #e0c2c1;
+
 }
+#s4 .background-img {
+	left: 60px;
+}
+#s4 .sections .objective {
+	left: 0px;
+}
+#s4 .sections .background {
+	left: 30px;
+}
+#s4 .sections .features {
+	left: 1860px;
+}
+#s4 .sections .solution {
+	left: 1890px;
+}
+#s4 .content {
+	left: 60px;
+	width: 1800px;
+	height: 930px;
+}
+#s4 .content .body {
+
+}
+#s4 .content .body .airplane {
+	position: absolute;
+	top: 80px;
+	width: 570px;
+	height: 446px;
+	font-size: 28px;
+}
+#s4 .content .body .airplane:nth-child(1) {
+	left: 225px;
+}
+#s4 .content .body .airplane:nth-child(2) {
+	left: 1005px;
+}
+#s4 .content .body .airplane .image {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 570px;
+	height: 346px;
+}
+#s4 .content .body .airplane .name {
+	position: absolute;
+	top: 346px;
+	left: 0px;
+	width: 570px;
+	height: 62px;
+	padding: 36px 0 0 0;
+	text-align: center;
+	border: 1px solid yellow;
+}
+
 /*
 Slide 5
 */
+
 #s5 {
-	left: 7500px;
-	background-color: #e0a2a1;
+
 }
+#s5 .background-img {
+	left: 90px;
+}
+#s5 .sections .objective {
+	left: 0px;
+}
+#s5 .sections .background {
+	left: 30px;
+}
+#s5 .sections .aircraft-type {
+	left: 60px;
+}
+#s5 .sections .solution {
+	left: 1890px;
+}
+#s5 .content {
+	left: 90px;
+	width: 1800px;
+	height: 930px;
+}
+#s5 .content .body {
+
+}
+#s5 .content .body .third {
+	position: absolute;
+	width: 440px;
+	height: 466px;
+	top: 64px;
+}
+#s5 .content .body .third:nth-child(1) {
+	left: 110px;
+}
+#s5 .content .body .third:nth-child(2) {
+	position: absolute;
+	left: 678px;
+}
+#s5 .content .body .third:nth-child(3) {
+	position: absolute;
+	left: 1246px;
+}
+#s5 .content .body .third .button {
+	position: absolute;
+	left: 0px;
+	width: 440px;
+	height: 66px;
+}
+#s5 .content .body .third .button:nth-child(1) {
+	top: 0px;
+}
+#s5 .content .body .third .button:nth-child(2) {
+	top: 80px;
+}
+#s5 .content .body .third .button:nth-child(3) {
+	top: 160px;
+}
+#s5 .content .body .third .button:nth-child(4) {
+	top: 240px;
+}
+#s5 .content .body .third .button:nth-child(5) {
+	top: 320px;
+}
+#s5 .content .body .third .button:nth-child(6) {
+	top: 400px;
+}
+#s5 .content .body .third .button .image {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 73px;
+	height: 64px;
+	border: 1px solid turquoise;
+}
+#s5 .content .body .third .button .name {
+	position: absolute;
+	top: 0px;
+	left: 75px;
+	width: 331px;
+	height: 40px;
+	padding: 24px 0 0 32px;
+	border: 1px solid turquoise;
+}
+
 /*
 Slide 6
 */
+
 #s6 {
-	left: 9360px;
-	background-color: #f0cbaa;
-}
-/*
-Slide 7
-*/
-#s7 {
-	left: 11160px;
-	background-color: #fec6a1;
+
 }
