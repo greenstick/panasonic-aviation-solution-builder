@@ -888,11 +888,268 @@ Author: Ben Cordier
 // 	interactive.index > 0 ? interactive.dynamicHeader.fadein(1000) : void(0);
 // });
 
-var Interactive = function (slide) {
+var solutionData = [
+		{
+			"solution": {
+				"id": 1,
+				"objectives": {
+					"manage-cost": false,
+					"generate-revenue": true,
+					"brand-differentiation": true
+				},
+				"background": {
+					"premium": true,
+					"mid-range": false,
+					"value": false
+				},
+				"aircraft-type": {
+					"narrow-body": true,
+					"wide-body": false
+				},
+				"features": {
+					"avod": true,
+					"wireless-streaming": true,
+					"ecommerce": true,
+					"hd": true,
+					"third-pary-apps": true,
+					"ped-power": true,
+					"overhead": false,
+					"advertising": true,
+					"survey": true,
+					"games": true,
+					"moving-map": true,
+					"video-handset": true,
+					"proactive-maintenance": true,
+					"usage-statistics": true,
+					"live-tv": false,
+					"voice-sms": false,
+					"technical-support": false,
+					"web-email": false,
+					"personalization": false
+				},
+				"main-product": "eX1",
+			}
+		},
+		{
+			"solution": {
+				"id": 2,
+				"objectives": {
+					"manage-cost": false,
+					"generate-revenue": true,
+					"brand-differentiation": true
+				},
+				"background": {
+					"premium": true,
+					"mid-range": false,
+					"value": false
+				},
+				"aircraft-type": {
+					"narrow-body": false,
+					"wide-body": true
+				},
+				"features": {
+					"avod": true,
+					"wireless-streaming": false,
+					"ecommerce": true,
+					"hd": true,
+					"third-pary-apps": true,
+					"ped-power": true,
+					"overhead": false,
+					"advertising": true,
+					"survey": true,
+					"games": true,
+					"moving-map": true,
+					"video-handset": true,
+					"proactive-maintenance": false,
+					"usage-statistics": true,
+					"live-tv": true,
+					"voice-sms": true,
+					"technical-support": true,
+					"web-email": true,
+					"personalization": true
+				},
+				"main-product": "eX3",
+			}
+		},
+		{
+			"solution": {
+				"id": 3,
+				"objectives": {
+					"manage-cost": true,
+					"generate-revenue": true,
+					"brand-differentiation": false
+				},
+				"background": {
+					"premium": false,
+					"mid-range": true,
+					"value": false
+				},
+				"aircraft-type": {
+					"narrow-body": false,
+					"wide-body": true
+				},
+				"features": {
+					"avod": true,
+					"wireless-streaming": false,
+					"ecommerce": true,
+					"hd": true,
+					"third-pary-apps": true,
+					"ped-power": false,
+					"overhead": false,
+					"advertising": true,
+					"survey": false,
+					"games": true,
+					"moving-map": true,
+					"video-handset": false,
+					"proactive-maintenance": true,
+					"usage-statistics": true,
+					"live-tv": false,
+					"voice-sms": false,
+					"technical-support": false,
+					"web-email": false,
+					"personalization": false
+				},
+				"main-product": "eXLite",
+			}
+		},
+		{
+			"solution": {
+				"id": 4,
+				"objectives": {
+					"manage-cost": true,
+					"generate-revenue": true,
+					"brand-differentiation": false
+				},
+				"background": {
+					"premium": true,
+					"mid-range": false,
+					"value": false
+				},
+				"aircraft-type": {
+					"narrow-body": true,
+					"wide-body": false
+				},
+				"features": {
+					"avod": true,
+					"wireless-streaming": true,
+					"ecommerce": true,
+					"hd": false,
+					"third-pary-apps": false,
+					"ped-power": false,
+					"overhead": true,
+					"advertising": true,
+					"survey": false,
+					"games": true,
+					"moving-map": true,
+					"video-handset": false,
+					"proactive-maintenance": true,
+					"usage-statistics": true,
+					"live-tv": false,
+					"voice-sms": false,
+					"technical-support": false,
+					"web-email": false,
+					"personalization": false
+				},
+				"main-product": "eX1",
+			}
+		},
+		{
+			"solution": {
+				"id": 5,
+				"objectives": {
+					"manage-cost": false,
+					"generate-revenue": true,
+					"brand-differentiation": true
+				},
+				"background": {
+					"premium": true,
+					"mid-range": false,
+					"value": false
+				},
+				"aircraft-type": {
+					"narrow-body": true,
+					"wide-body": false
+				},
+				"features": {
+					"avod": true,
+					"wireless-streaming": true,
+					"ecommerce": true,
+					"hd": true,
+					"third-pary-apps": true,
+					"ped-power": true,
+					"overhead": false,
+					"advertising": true,
+					"survey": true,
+					"games": true,
+					"moving-map": true,
+					"video-handset": true,
+					"proactive-maintenance": true,
+					"usage-statistics": true,
+					"live-tv": false,
+					"voice-sms": false,
+					"technical-support": false,
+					"web-email": false,
+					"personalization": false
+				},
+				"main-product": "eX1",
+			}
+		},
+		{
+			"solution": {
+				"id": 6,
+				"objectives": {
+					"manage-cost": false,
+					"generate-revenue": true,
+					"brand-differentiation": true
+				},
+				"background": {
+					"premium": true,
+					"mid-range": false,
+					"value": false
+				},
+				"aircraft-type": {
+					"narrow-body": true,
+					"wide-body": false
+				},
+				"features": {
+					"avod": true,
+					"wireless-streaming": true,
+					"ecommerce": true,
+					"hd": true,
+					"third-pary-apps": true,
+					"ped-power": true,
+					"overhead": false,
+					"advertising": true,
+					"survey": true,
+					"games": true,
+					"moving-map": true,
+					"video-handset": true,
+					"proactive-maintenance": true,
+					"usage-statistics": true,
+					"live-tv": false,
+					"voice-sms": false,
+					"technical-support": false,
+					"web-email": false,
+					"personalization": false
+				},
+				"main-product": "eX1",
+			}
+		}];
+
+var Interactive = function (slide, data) {
 	var self = this;
 		self.slide = slide,
-		self.index = 0;
+		self.index = 0,
+		self.m1Data = [],
+		self.m2Data = [],
+		self.m3Data = [],
+		self.m4Data = [],
+		self.solutionsData = data;
 };
+
+/*
+Navigation Methods
+*/
 
 //Initialize Interactive
 Interactive.prototype.init = function () {
@@ -925,6 +1182,7 @@ Interactive.prototype.prev = function (callback) {
 	//If Callback Function Exists, Execute It
 	typeof callback == 'function' ? callback.apply(this) : void(0);
 };
+// Restart Interactive
 Interactive.prototype.restart = function (callback) {
 	$(this.slide).first().addClass('active');
 	self.index = 1;
@@ -932,25 +1190,153 @@ Interactive.prototype.restart = function (callback) {
 	typeof callback == 'function' ? callback.apply(this) : void(0);
 };
 
-var interactive = new Interactive('.slide');
+/*
+Utility Methods
+*/
+
+Interactive.prototype.select = function (id, rule) {
+	var element = $('#' + id), rule;
+	typeof rule == 'object' ? rule = rule.rule : void(0);
+	//rule is integer - determines how many selected items are allowed
+	if (typeof rule == 'int') {
+		if (element.hasClass('inactive')) {
+			return
+		}
+		//toggle class
+		else if (element.hasClass('selected')) {
+			element.removeClass('selected');
+		}
+		//check how if integer limit has been reached
+		else if () {
+			element.addClass('selected');
+		}
+		else {
+			element.addClass('selected');
+		};
+	//rule is binary - either or selection with greyout - may not need this
+	} else if (rule === 'binary') {
+
+	}
+};
+
+Interactive.prototype.clearData = function (arr) {
+	console.log(arr);
+};
+
+/*
+Data Processing Methods
+*/
+
+//Update Module 1
+Interactive.prototype.updateModule = function (slide, data) {
+	var data = data || this.solutionsData;
+	console.log(slide);
+	console.log(data);
+	// else {
+	// 	for (var i = 0; i < arr.length; i++) {
+	// 		if (arr[i] == id) {
+	// 			test = id;
+	// 		}
+	// 	}
+	// 	test === id ? arr.push(test) : false;
+	// 	console.log(arr);
+	// }
+};
+
+//Instantiation & Initialization
+var interactive = new Interactive('.slide', solutionData);
 	interactive.init();
 
 /*
-Event Bindings
+General Navigation Event Bindings
 */
 
-//Navigate Slides
-$('.section').on("click", function () {
-	var data = $(this).data().to;
-	
-	interactive.to(data);
-});
-//Previous Slide
-$('#s1, .next').on("click", function () {
+//First Slide
+$('.getStarted').on("click", function () {
 	interactive.next();
 });
-//Previous Slide
-$('.prev').on("click", function () {
+
+/*
+Side Section Navigation
+*/
+
+// //Navigate Slides
+// $('.section').on("click", function () {
+// 	var data = $(this).data().to;
+// 		interactive.to(data);
+// });
+
+/*
+Data Processing Event Bindings - Next Slide
+	Because this interactive has some interesting delegations going on and a multi-module algorithm, elements are bound by their parent slide to their slide-specific
+	data processing module. Each module updates a prototype array with the user selected data, with the first module accepting the full JSON data object (no user selection).
+	This array is then used to determine which possibilities/features to render as selectable. 
+*/
+
+//Slide 2 Next
+$('#s2 .next, #s2 .toBackground').on("click", function (e) {
+	interactive.updateModule(e.currentTarget.id);
+	interactive.next();
+});
+//Slide 3 Next
+$('#s3 .next, #s3 .toAircraft-Type').on("click", function (e) {
+	interactive.updateModule(e.currentTarget.id, interactive.m1Data);
+	interactive.next();
+});
+//Slide 4 Next
+$('#s4 .next, #s4 .toFeatures').on("click", function (e) {
+	interactive.updateModule(e.currentTarget.id, interactive.m2Data);
+	interactive.next();
+});
+//Slide 5 Next
+$('#s5 .next, #s5 .toSolution').on("click", function (e) {
+	interactive.updateModule(e.currentTarget.id, interactive.m3Data);
+	interactive.next();
+});
+/*
+Event Bindings - Previous Slide
+	Clear the data from the current slide's data array before going back to the previous slide.
+*/
+
+//Slide 2 Previous
+$('#s2 .prev').on("click", function (e) {
+	interactive.clearData(interactive.m1Data);
 	interactive.prev();
+});
+//Slide 3 Previous
+$('#s3 .prev, #s3 .toObjective').on("click", function (e) {
+	interactive.clearData(interactive.m2Data);
+	interactive.prev();
+});
+//Slide 4 Previous
+$('#s4 .prev, #s4 .toBackground').on("click", function (e) {
+	interactive.clearData(interactive.m3Data);
+	interactive.prev();
+});
+//Slide 5 Previous
+$('#s5 .prev, #s5 .toAircraft-Type').on("click", function (e) {
+	interactive.clearData(interactive.m4Data);
+	interactive.prev();
+});
+
+/*
+User Input Selection
+*/
+
+//Access Slide 2 Inputs
+$('#s2 .input').on("click", function (e) {
+	interactive.select(e.currentTarget.id, {"rule": 2});
+});
+//Access Slide 3 Inputs
+$('#s3 .input').on("click", function (e) {
+	interactive.select(e.currentTarget.id, {"rule": 2});
+});
+//Access Slide 4 Inputs
+$('#s4 .input').on("click", function (e) {
+	interactive.select(e.currentTarget.id, {"rule": "binary"});
+});
+//Access Slide 5 Inputs
+$('#s5 .input').on("click", function (e) {
+	interactive.select(e.currentTarget.id);
 });
 

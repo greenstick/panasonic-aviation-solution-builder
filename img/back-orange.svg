@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="304.667px" height="155.041px" viewBox="0 0 304.667 155.041" enable-background="new 0 0 304.667 155.041"
+	 xml:space="preserve">
+<g id="background">
+</g>
+<g id="noise">
+</g>
+<g id="content">
+</g>
+<g id="buttons">
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="144.3984" y1="117.334" x2="241.2784" y2="44.0834">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			<stop  offset="0.9887" style="stop-color:#A0B4AC"/>
+		</linearGradient>
+		<polygon opacity="0.4" fill="url(#SVGID_1_)" points="239.549,155 0,155 154.667,-0.041 304.667,89.762 		"/>
+		<g>
+			<rect x="155" fill="#E3801C" width="150" height="90"/>
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="163" y1="45" x2="297" y2="45">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="0.9905" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<rect x="163" y="8" opacity="0.2" fill="url(#SVGID_2_)" width="134" height="74"/>
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="190.0391" y1="44.0889" x2="134.8523" y2="58.6108">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="0.9905" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<polygon opacity="0.3" fill="url(#SVGID_3_)" points="162,82 162,8 197.667,8 211.155,82 			"/>
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="282.8887" y1="40.2314" x2="333.3653" y2="4.8984">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="0.9905" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<polygon opacity="0.4" fill="url(#SVGID_4_)" points="275.667,82 255.15,8 297,8 297,82 			"/>
+			<polygon fill="none" points="304.667,57.364 155.056,57.364 155.36,16.958 304.667,16.958 			"/>
+			
+				<text transform="matrix(1 0 0 1 184.1904 40.7578)" fill="#FFFFFF" font-family="'DINNextLTPro-Regular'" font-size="35" letter-spacing="2">BACK</text>
+			<g>
+				<polygon fill="#FFFFFF" points="240.763,50 230.588,50 218.177,62 230.588,74 240.763,74 228.352,62 				"/>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="icons">
+</g>
+<g id="conten_2t">
+</g>
+<g id="tabs">
+</g>
+<g id="header">
+</g>
+<g id="_x33__col_guides">
+</g>
+</svg>

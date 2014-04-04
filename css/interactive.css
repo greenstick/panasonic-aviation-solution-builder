@@ -44,25 +44,25 @@ Color Palette
 */
 
 .r-bg {
-	background-color: red;
+	background-color: rgba(179, 35, 23, 1);
 }
 .b-bg {
-	background-color: blue;
+	background-color: rgba(31, 60, 92, 1);
 }
 .p-bg {
-	background-color: purple;
+	background-color: rgba(113, 20, 113, 1);
 }
 .t-bg {
-	background-color: turquoise;
+	background-color: rgba(43, 110, 130, 1);
 }
 .y-bg {
-	background-color: yellow;
+	background-color: rgba(227, 128, 28, 1);
 }
 .w {
 	color: white;
 }
 .b {
-	color: blue;
+	color: rgba(31, 60, 92, 1);
 }
 
 /*
@@ -114,7 +114,6 @@ Global Styles
 	left: 0px;
 	width: 1920px;
 	height: 930px;
-	z-index: 100;
 	font-size: 18px;
 }
 .slide .sections .section {
@@ -122,14 +121,15 @@ Global Styles
 	top: 0px;
 	width: 30px;
 	height: 930px;
+	z-index: 100;
 }
 .slide .sections .section .title {
 	position: absolute;
 	top: 450px;
 	left: -450px;
 	width: 200px;
-	height: 24px;
-	padding: 6px 0 0 730px;
+	height: 22px;
+	padding: 8px 0 0 730px;
 	text-align: left;
 	-webkit-transform: rotate(-90deg);
 }
@@ -141,9 +141,9 @@ Global Styles
 	position: absolute;
 	top: 0px;
 	left: 0px;
-	width: 1668px;
+	width: 1690px;
 	height: 80px;
-	padding: 36px 0 0 132px;
+	padding: 36px 0 0 110px;
 	font-size: 40px;
 }
 .slide .content .body {
@@ -164,6 +164,25 @@ Global Styles
 	font-size: 24px;
 	cursor: pointer;
 }
+.section, .getStarted, .prev, .next {
+	cursor: pointer;
+}
+.prev {
+	position: absolute;
+	top: 0px;
+	left: -42px;
+	width: 306px;
+	height: 154px;
+	padding: 60px 0 0 0;
+}
+.next {
+	position: absolute;
+	top: 0px;
+	left: 1386px;
+	width: 306px;
+	height: 154px;
+	padding: 60px 0 0 0;
+}
 
 /*
 Slide 1
@@ -171,6 +190,26 @@ Slide 1
 
 #s1 {
 	background: url('../img/bg-splash.png');
+}
+#s1 .content {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+}
+#s1 .content .image {
+	position: absolute;
+	top: 280px;
+	left: 200px;
+	width: 700px;
+	height: 700px;
+	background: url('../img/splash-image.svg');
+}
+#s1 .content .getStarted {
+	position: absolute;
+	top: 800px;
+	left: 900px;
 }
 
 /*
@@ -208,6 +247,7 @@ Slide 2
 	width: 440px;
 	height: 446px;
 	top: 80px;
+	color: rgba(113, 20, 113, 1);
 }
 #s2 .content .body .third:nth-child(1) {
 	left: 110px;
@@ -235,7 +275,14 @@ Slide 2
 	height: 62px;
 	padding: 36px 0 0 0;
 	text-align: center;
-	border: 1px solid purple;
+	border: 1px solid rgba(113, 20, 113, 1);
+}
+#s2 .content .body .third:hover .image, #s2 .content .body .third.selected .image {
+	background-color: rgba(66, 14, 68, 1);
+}
+#s2 .content .body .third:hover .name, #s2 .content .body .third.selected .name {
+	color: rgba(66, 14, 68, 1);
+	border: 1px solid rgba(66, 14, 68, 1);
 }
 
 /*
@@ -306,15 +353,26 @@ Slide 3
 	left: 0px;
 	width: 160px;
 	height: 134px;
+	background-color: rgba(179, 35, 23, 1);
+	text-align: center;
 }
 #s3 .content .body .third .button .name {
 	position: absolute;
 	top: 0px;
 	left: 160px;
-	width: 248px;
-	height: 86px;
+	width: 246px;
+	height: 84px;
 	padding: 48px 0 0 32px;
 	text-align: left;
+	border: 1px solid rgba(179, 35, 23, 1);
+	color: rgba(179, 35, 23, 1);
+}
+#s3 .content .body .third .button:hover .image, #s3 .content .body .third .button.selected .image {
+	background-color: rgba(127, 23, 18, 1);
+}
+#s3 .content .body .third .button:hover .name, #s3 .content .body .third .button.selected .name {
+	border: 1px solid rgba(127, 23, 18, 1);
+	color: rgba(127, 23, 18, 1);
 }
 
 /*
@@ -353,6 +411,7 @@ Slide 4
 	width: 570px;
 	height: 446px;
 	font-size: 28px;
+	cursor: pointer;
 }
 #s4 .content .body .airplane:nth-child(1) {
 	left: 225px;
@@ -366,18 +425,25 @@ Slide 4
 	left: 0px;
 	width: 570px;
 	height: 346px;
+	text-align: center;
 }
 #s4 .content .body .airplane .name {
 	position: absolute;
 	top: 346px;
 	left: 0px;
-	width: 570px;
-	height: 62px;
+	width: 568px;
+	height: 60px;
 	padding: 36px 0 0 0;
 	text-align: center;
-	border: 1px solid yellow;
+	border: 1px solid rgba(227, 128, 28, 1);
+	background-color: rgba(255, 255, 255, 1);
 }
-
+#s4 .content .body .airplane:hover .image, #s4 .content .body .airplane.selected .image {
+	background-color: rgba(165, 83, 10, 1);
+}
+#s4 .content .body .airplane:hover .name, #s4 .content .body .airplane.selected .name {
+	border: 1px solid rgba(165, 83, 10, 1);
+}
 /*
 Slide 5
 */
@@ -412,7 +478,7 @@ Slide 5
 	position: absolute;
 	width: 440px;
 	height: 466px;
-	top: 64px;
+	top: 28px;
 }
 #s5 .content .body .third:nth-child(1) {
 	left: 110px;
@@ -449,13 +515,17 @@ Slide 5
 #s5 .content .body .third .button:nth-child(6) {
 	top: 400px;
 }
+#s5 .content .body .third .button:nth-child(7) {
+	top: 480px;
+}
 #s5 .content .body .third .button .image {
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 73px;
 	height: 64px;
-	border: 1px solid turquoise;
+	border: 1px solid rgba(43, 110, 130, 1);
+	text-align: center;
 }
 #s5 .content .body .third .button .name {
 	position: absolute;
@@ -464,7 +534,26 @@ Slide 5
 	width: 331px;
 	height: 40px;
 	padding: 24px 0 0 32px;
-	border: 1px solid turquoise;
+	border: 1px solid rgba(43, 110, 130, 1);
+	color: rgba(43, 110, 130, 1);
+}
+#s5 .content .body .third .button:hover .image, #s5 .content .body .third .button.selected .image {
+	background-color: rgba(27, 73, 84, 1);
+}
+#s5 .content .body .third .button:hover .name, #s5 .content .body .third .button.selected .name {
+	border: 1px solid rgba(27, 73, 84, 1);
+	color: rgba(27, 73, 84, 1);
+}
+#s5 .content .body .third .button.inactive {
+	cursor: default;
+}
+#s5 .content .body .third .button.inactive .image {
+	background-color: rgba(153, 153, 153, 1);
+	border: 1px solid rgba(153, 153, 153, 1);
+}
+#s5 .content .body .third .button.inactive .name {
+	border: 1px solid rgba(153, 153, 153, 1);
+	color: rgba(153, 153, 153, 1);
 }
 
 /*

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.2.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="304.667px" height="155.041px" viewBox="0 0 304.667 155.041" enable-background="new 0 0 304.667 155.041"
+	 xml:space="preserve">
+<g id="background">
+</g>
+<g id="noise">
+</g>
+<g id="content">
+</g>
+<g id="buttons">
+	<g>
+		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="144.0654" y1="117.375" x2="240.9454" y2="44.1244">
+			<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+			<stop  offset="0.9887" style="stop-color:#A0B4AC"/>
+		</linearGradient>
+		<polygon opacity="0.4" fill="url(#SVGID_1_)" points="239.216,155.041 -0.333,155.041 154.334,0 304.334,89.803 		"/>
+	</g>
+	<g>
+		<g>
+			<rect x="154.667" y="0.041" fill="#1F3C5C" width="150" height="90"/>
+		</g>
+		<g>
+			<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="163.667" y1="44.041" x2="297.667" y2="44.041">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="0.9905" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<rect x="163.667" y="7.041" opacity="0.2" fill="url(#SVGID_2_)" width="134" height="74"/>
+			<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="191.1572" y1="43.0996" x2="135.3034" y2="57.7971">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="0.9905" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<polygon opacity="0.3" fill="url(#SVGID_3_)" points="162.667,81.041 162.667,7.041 199,7.041 212.488,81.041 			"/>
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="283.8896" y1="39.2715" x2="333.9071" y2="4.2598">
+				<stop  offset="0" style="stop-color:#FFFFFF;stop-opacity:0"/>
+				<stop  offset="0.9905" style="stop-color:#FFFFFF"/>
+			</linearGradient>
+			<polygon opacity="0.4" fill="url(#SVGID_4_)" points="277,81.041 256.484,7.041 297.667,7.041 297.667,81.041 			"/>
+		</g>
+	</g>
+	<polygon fill="none" points="302.505,87.362 154.389,87.362 154.69,16.956 302.804,16.956 	"/>
+	<text transform="matrix(1 0 0 1 177.6729 38.7158)"><tspan x="0" y="0" fill="#FFFFFF" font-family="'DINNextLTPro-Regular'" font-size="32" letter-spacing="2">START</tspan><tspan x="9.513" y="32" fill="#FFFFFF" font-family="'DINNextLTPro-Regular'" font-size="32" letter-spacing="2">OVER</tspan></text>
+</g>
+<g id="icons">
+</g>
+<g id="conten_2t">
+</g>
+<g id="tabs">
+</g>
+<g id="header">
+</g>
+<g id="_x33__col_guides">
+</g>
+</svg>
