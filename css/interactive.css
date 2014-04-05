@@ -239,9 +239,6 @@ Slide 2
 	width: 1800px;
 	height: 930px;
 }
-#s2 .content .body {
-
-}
 #s2 .content .body .third {
 	position: absolute;
 	width: 440px;
@@ -277,12 +274,22 @@ Slide 2
 	text-align: center;
 	border: 1px solid rgba(113, 20, 113, 1);
 }
-#s2 .content .body .third:hover .image, #s2 .content .body .third.selected .image {
+#s2 .content .body .button:hover .image, #s2 .content .body .button.selected .image {
 	background-color: rgba(66, 14, 68, 1);
 }
-#s2 .content .body .third:hover .name, #s2 .content .body .third.selected .name {
+#s2 .content .body .button:hover .name, #s2 .content .body .button.selected .name {
 	color: rgba(66, 14, 68, 1);
 	border: 1px solid rgba(66, 14, 68, 1);
+}
+#s2 .content .body .button.inactive {
+	cursor: default;
+}
+#s2 .content .body .button.inactive .image {
+	background-color: rgba(153, 153, 153, 1);
+}
+#s2 .content .body .button.inactive .name {
+	border: 1px solid rgba(153, 153, 153, 1);
+	color: rgba(153, 153, 153, 1);
 }
 
 /*
@@ -311,9 +318,6 @@ Slide 3
 	left: 30px;
 	width: 1800px;
 	height: 930px;
-}
-#s3 .content .body {
-
 }
 #s3 .content .body .third {
 	position: absolute;
@@ -374,6 +378,16 @@ Slide 3
 	border: 1px solid rgba(127, 23, 18, 1);
 	color: rgba(127, 23, 18, 1);
 }
+#s3 .content .body .third .button.inactive {
+	cursor: default;
+}
+#s3 .content .body .third .button.inactive .image {
+	background-color: rgba(153, 153, 153, 1);
+}
+#s3 .content .body .third .button.inactive .name {
+	border: 1px solid rgba(153, 153, 153, 1);
+	color: rgba(153, 153, 153, 1);
+}
 
 /*
 Slide 4
@@ -401,9 +415,6 @@ Slide 4
 	left: 60px;
 	width: 1800px;
 	height: 930px;
-}
-#s4 .content .body {
-
 }
 #s4 .content .body .airplane {
 	position: absolute;
@@ -437,20 +448,30 @@ Slide 4
 	text-align: center;
 	border: 1px solid rgba(227, 128, 28, 1);
 	background-color: rgba(255, 255, 255, 1);
+	color: rgba(227, 128, 28, 1);
 }
 #s4 .content .body .airplane:hover .image, #s4 .content .body .airplane.selected .image {
 	background-color: rgba(165, 83, 10, 1);
 }
 #s4 .content .body .airplane:hover .name, #s4 .content .body .airplane.selected .name {
 	border: 1px solid rgba(165, 83, 10, 1);
+	color: rgba(165, 83, 10, 1);
 }
+#s4 .content .body .button.inactive {
+	cursor: default;
+}
+#s4 .content .body .button.inactive .image {
+	background-color: rgba(153, 153, 153, 1);
+}
+#s4 .content .body .button.inactive .name {
+	border: 1px solid rgba(153, 153, 153, 1);
+	color: rgba(153, 153, 153, 1);
+}
+
 /*
 Slide 5
 */
 
-#s5 {
-
-}
 #s5 .background-img {
 	left: 90px;
 }
@@ -470,9 +491,6 @@ Slide 5
 	left: 90px;
 	width: 1800px;
 	height: 930px;
-}
-#s5 .content .body {
-
 }
 #s5 .content .body .third {
 	position: absolute;
@@ -544,14 +562,13 @@ Slide 5
 	border: 1px solid rgba(27, 73, 84, 1);
 	color: rgba(27, 73, 84, 1);
 }
-#s5 .content .body .third .button.inactive {
+#s5 .content .body .third .button.inactive, #s5 .content .body .third .button.noSelect {
 	cursor: default;
 }
-#s5 .content .body .third .button.inactive .image {
+#s5 .content .body .third .button.inactive .image, #s5 .content .body .third .button.noSelect .image {
 	background-color: rgba(153, 153, 153, 1);
-	border: 1px solid rgba(153, 153, 153, 1);
 }
-#s5 .content .body .third .button.inactive .name {
+#s5 .content .body .third .button.inactive .name, #s5 .content .body .third .button.noSelect .name {
 	border: 1px solid rgba(153, 153, 153, 1);
 	color: rgba(153, 153, 153, 1);
 }

@@ -1050,7 +1050,7 @@ var solutionData = [
 					"web-email": false,
 					"personalization": false
 				},
-				"main-product": "eX1",
+				"main-product": "eXO",
 			}
 		},
 		{
@@ -1091,7 +1091,7 @@ var solutionData = [
 					"web-email": false,
 					"personalization": false
 				},
-				"main-product": "eX1",
+				"main-product": "eXW",
 			}
 		},
 		{
@@ -1132,7 +1132,7 @@ var solutionData = [
 					"web-email": false,
 					"personalization": false
 				},
-				"main-product": "eX1",
+				"main-product": "eXConnect",
 			}
 		}];
 
@@ -1140,10 +1140,11 @@ var Interactive = function (slide, data) {
 	var self = this;
 		self.slide = slide,
 		self.index = 0,
-		self.m1Data = [],
-		self.m2Data = [],
-		self.m3Data = [],
-		self.m4Data = [],
+		self.s1Data = [],
+		self.s2Data = [],
+		self.s3Data = [],
+		self.s4Data = [],
+		self.workingData = [],
 		self.solutionsData = data;
 };
 
@@ -1184,6 +1185,11 @@ Interactive.prototype.prev = function (callback) {
 };
 // Restart Interactive
 Interactive.prototype.restart = function (callback) {
+	this.s1Data = [];
+	this.s2Data = [];
+	this.s3Data = [];
+	this.s4Data = [];
+	$('.active').removeClass('active');
 	$(this.slide).first().addClass('active');
 	self.index = 1;
 	//If Callback Function Exists, Execute It
@@ -1194,53 +1200,75 @@ Interactive.prototype.restart = function (callback) {
 Utility Methods
 */
 
-Interactive.prototype.select = function (id, rule) {
-	var element = $('#' + id), rule;
-	typeof rule == 'object' ? rule = rule.rule : void(0);
+//Fairly Nasty Piece of Work; Allows User to Select Tiles on Slides and Provides UI Feedback.
+//An Optional Rule Object Parameter Can Be Passed To Specify A Limit to The Number of Tiles That Can Be Selected.
+Interactive.prototype.select = function (id, parent, rule) {
+	var element = $('#' + id);
 	//rule is integer - determines how many selected items are allowed
-	if (typeof rule == 'int') {
+	if (rule && typeof rule === 'number') {
 		if (element.hasClass('inactive')) {
 			return
 		}
 		//toggle class
 		else if (element.hasClass('selected')) {
-			element.removeClass('selected');
+			$('#' + parent + ' .button.inactive').removeClass('inactive');
+			element.toggleClass('selected');
 		}
-		//check how if integer limit has been reached
-		else if () {
-			element.addClass('selected');
-		}
+		//if limit rule has been reached, render other buttons inactive
+		else if ($('#' + parent + ' .selected').length > rule - 1) {
+			$('#' + parent + ' .button:not(.selected)').addClass('inactive');
+			return
+		} 
+		//else add selected and check to see if limit rule has been reached, if so render other buttons inactive
 		else {
 			element.addClass('selected');
+			if ($('#' + parent + ' .selected').length > rule - 1) {
+				$('#' + parent + ' .button:not(.selected)').addClass('inactive');
+			};
 		};
-	//rule is binary - either or selection with greyout - may not need this
-	} else if (rule === 'binary') {
-
 	}
-};
-
-Interactive.prototype.clearData = function (arr) {
-	console.log(arr);
+	//No rule, toggle class
+	else {
+		element.toggleClass('selected');
+	};
 };
 
 /*
 Data Processing Methods
 */
 
-//Update Module 1
-Interactive.prototype.updateModule = function (slide, data) {
-	var data = data || this.solutionsData;
-	console.log(slide);
-	console.log(data);
-	// else {
-	// 	for (var i = 0; i < arr.length; i++) {
-	// 		if (arr[i] == id) {
-	// 			test = id;
-	// 		}
-	// 	}
-	// 	test === id ? arr.push(test) : false;
-	// 	console.log(arr);
-	// }
+Interactive.prototype.buildArray = function (slide, array, parent) {
+	if (parent === false) {
+			$('#' + slide + ' .selected').each(function (k, v) {
+			array.push(v.id);
+		});
+	} else {		
+		$('#' + slide + ' .selected').parent().each(function (k, v) {
+			if (array.indexOf($(v).attr("id")) < 0) {
+				array.push($(v).attr("id"));
+			};
+		});
+	};
+	return array;
+};
+
+//Update Module
+Interactive.prototype.filterData = function (slide, location, limit, array, data) {
+	var data = data || this.solutionsData, patterns = [], solutions = []; 
+	for (var i = 0; i < data.length; i++) {
+		var valid = [];
+		for (var j = 0; j < array.length; j++) {
+			if (data[i].solution[location][array[j]] === true) {
+				valid.push(data[i].solution[location][array[j]]);
+			};
+		};
+		console.log(valid);
+		if (valid.length === limit) {
+			solutions.push(data[i])
+		};
+	};
+	console.log(solutions);
+	return solutions;
 };
 
 //Instantiation & Initialization
@@ -1256,42 +1284,40 @@ $('.getStarted').on("click", function () {
 	interactive.next();
 });
 
-/*
-Side Section Navigation
-*/
-
-// //Navigate Slides
-// $('.section').on("click", function () {
-// 	var data = $(this).data().to;
-// 		interactive.to(data);
-// });
+$('.restart').on("click", function () {
+	interactive.restart();
+});
 
 /*
 Data Processing Event Bindings - Next Slide
-	Because this interactive has some interesting delegations going on and a multi-module algorithm, elements are bound by their parent slide to their slide-specific
-	data processing module. Each module updates a prototype array with the user selected data, with the first module accepting the full JSON data object (no user selection).
-	This array is then used to determine which possibilities/features to render as selectable. 
+	Because this interactive has some interesting delegations going on, elements are bound by their parent slide to their slide-specific
+	data array. This array is then used to determine which possibilities/features to render as selectable. 
 */
 
 //Slide 2 Next
 $('#s2 .next, #s2 .toBackground').on("click", function (e) {
-	interactive.updateModule(e.currentTarget.id);
-	interactive.next();
+	var array = interactive.buildArray('s2', interactive.s1Data, false);
+		interactive.s1Data = interactive.filterData('s2', 'objectives', 2, array);
+		interactive.next();
 });
 //Slide 3 Next
 $('#s3 .next, #s3 .toAircraft-Type').on("click", function (e) {
-	interactive.updateModule(e.currentTarget.id, interactive.m1Data);
-	interactive.next();
+	var array = interactive.buildArray('s3', interactive.s2Data, true);
+		console.log(array);
+		interactive.s2Data = interactive.filterData('s3', 'background', 1, array, interactive.s1Data);
+		interactive.next();
 });
 //Slide 4 Next
 $('#s4 .next, #s4 .toFeatures').on("click", function (e) {
-	interactive.updateModule(e.currentTarget.id, interactive.m2Data);
-	interactive.next();
+	var array = interactive.buildArray('s4', interactive.s3Data, false);
+		interactive.s3Data = interactive.filterData('s4', 'aircraft-type', 1, array, interactive.s2Data);
+		interactive.next();
 });
 //Slide 5 Next
 $('#s5 .next, #s5 .toSolution').on("click", function (e) {
-	interactive.updateModule(e.currentTarget.id, interactive.m3Data);
-	interactive.next();
+	var array = interactive.buildArray('s5', interactive.s4Data, false);
+		interactive.s4Data = interactive.filterData('s5', 'features', null, array, interactive.s3Data);
+		interactive.next();
 });
 /*
 Event Bindings - Previous Slide
@@ -1300,43 +1326,43 @@ Event Bindings - Previous Slide
 
 //Slide 2 Previous
 $('#s2 .prev').on("click", function (e) {
-	interactive.clearData(interactive.m1Data);
+	interactive.s1Data = [];
 	interactive.prev();
 });
 //Slide 3 Previous
 $('#s3 .prev, #s3 .toObjective').on("click", function (e) {
-	interactive.clearData(interactive.m2Data);
+	interactive.s2Data = [];
 	interactive.prev();
 });
 //Slide 4 Previous
 $('#s4 .prev, #s4 .toBackground').on("click", function (e) {
-	interactive.clearData(interactive.m3Data);
+	interactive.s3Data = [];
 	interactive.prev();
 });
 //Slide 5 Previous
 $('#s5 .prev, #s5 .toAircraft-Type').on("click", function (e) {
-	interactive.clearData(interactive.m4Data);
+	interactive.s4Data = [];
 	interactive.prev();
 });
 
 /*
-User Input Selection
+User Input Selection - Slide Specific
 */
 
 //Access Slide 2 Inputs
 $('#s2 .input').on("click", function (e) {
-	interactive.select(e.currentTarget.id, {"rule": 2});
+	interactive.select(e.currentTarget.id, "s2", 2);
 });
 //Access Slide 3 Inputs
 $('#s3 .input').on("click", function (e) {
-	interactive.select(e.currentTarget.id, {"rule": 2});
+	interactive.select(e.currentTarget.id, "s3", 2);
 });
 //Access Slide 4 Inputs
 $('#s4 .input').on("click", function (e) {
-	interactive.select(e.currentTarget.id, {"rule": "binary"});
+	interactive.select(e.currentTarget.id, "s4", 1);
 });
 //Access Slide 5 Inputs
 $('#s5 .input').on("click", function (e) {
-	interactive.select(e.currentTarget.id);
+	interactive.select(e.currentTarget.id, "s5");
 });
 
