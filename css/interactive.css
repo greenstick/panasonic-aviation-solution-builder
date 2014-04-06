@@ -567,6 +567,7 @@ Slide 5
 }
 #s5 .content .body .third .button.inactive .image, #s5 .content .body .third .button.noSelect .image {
 	background-color: rgba(153, 153, 153, 1);
+	border: 1px solid rgba(153, 153, 153, 1);
 }
 #s5 .content .body .third .button.inactive .name, #s5 .content .body .third .button.noSelect .name {
 	border: 1px solid rgba(153, 153, 153, 1);
