@@ -143,7 +143,7 @@ Global Styles
 	left: 0px;
 	width: 1690px;
 	height: 80px;
-	padding: 36px 0 0 110px;
+	margin: 36px 0 0 110px;
 	font-size: 40px;
 }
 .slide .content .body {
@@ -164,7 +164,7 @@ Global Styles
 	font-size: 24px;
 	cursor: pointer;
 }
-.section, .getStarted, .prev, .next {
+.section, .getStarted, .prev, .next, .restart {
 	cursor: pointer;
 }
 .prev {
@@ -175,7 +175,7 @@ Global Styles
 	height: 154px;
 	padding: 60px 0 0 0;
 }
-.next {
+.next, .restart{
 	position: absolute;
 	top: 0px;
 	left: 1386px;
@@ -580,4 +580,67 @@ Slide 6
 
 #s6 {
 
+}
+#s6 .background-img {
+	left: 120px;
+}
+#s6 .sections .objective {
+	left: 0px;
+}
+#s6 .sections .background {
+	left: 30px;
+}
+#s6 .sections .aircraft-type {
+	left: 60px;
+}
+#s6 .sections .features {
+	left: 90px;
+}
+#s6 .content {
+	left: 120px;
+	width: 1800px;
+	height: 930px;
+}
+#s6 .content .header .left {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 486px;
+	height: inherit;
+}
+#s6 .content .header .right {
+	position: absolute;
+	top: 0px;
+	left: 1140px;
+	width: 486px;
+	height: inherit;
+}
+#s6 .content .body .third {
+	position: absolute;
+	width: 440px;
+	height: 446px;
+	top: 80px;
+}
+#s6 .content .body .third:nth-child(1) {
+	left: 110px;
+	background-color: rgba(255, 255, 255, 1);
+}
+#s6 .content .body .third:nth-child(2) {
+	position: absolute;
+	left: 680px;
+}
+#s6 .content .body .third:nth-child(3) {
+	position: absolute;
+	left: 1250px;
+}
+#s6 .content .body .third .solutionDescription {
+	font-size: 28px;
+}
+#s6 .content .body .third .addon {
+	position: relative;
+	top: 0px;
+	left: 0px;
+	width: 440px;
+	height: 72px;
+	font-size: 28px;
 }
