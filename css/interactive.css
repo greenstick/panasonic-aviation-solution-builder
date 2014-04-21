@@ -4,39 +4,11 @@ Fonts
 
 @font-face {
 	font-family: DINNextLTPro-Regular;
-	src: url(../fonts/DINNextLTPro-Regular.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-Bold;
-	src: url(../fonts/DINNextLTPro-Bold.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-Heavy;
-	src: url(../fonts/DINNextLTPro-Heavy.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-Black;
-	src: url(../fonts/DINNextLTPro-Black.otf);
+	src: url(../fonts/DINNextLTPro-Regular.woff);
 }
 @font-face {
 	font-family: DINNextLTPro-Light;
-	src: url(../fonts/DINNextLTPro-Light.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-UltraLight;
-	src: url(../fonts/DINNextLTPro-UltraLight.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-Italic;
-	src: url(../fonts/DINNextLTPro-Italic.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-BoldItalic;
-	src: url(../fonts/DINNextLTPro-BoldItalic.otf);
-}
-@font-face {
-	font-family: DINNextLTPro-LightItalic;
-	src: url(../fonts/DINNextLTPro-LightItalic.otf);
+	src: url(../fonts/DINNextLTPro-Light.woff);
 }
 
 /*
@@ -122,6 +94,7 @@ Global Styles
 	width: 30px;
 	height: 930px;
 	z-index: 100;
+	letter-spacing: 2px;
 }
 .slide .sections .section .title {
 	position: absolute;
@@ -132,6 +105,10 @@ Global Styles
 	padding: 8px 0 0 730px;
 	text-align: left;
 	-webkit-transform: rotate(-90deg);
+	-moz-transform: rotate(-90deg);
+	-ms-transform: rotate(-90deg);
+	-o-transform: rotate(-90deg);
+	transform: rotate(-90deg);
 }
 .slide .content {
 	position: absolute;
@@ -201,15 +178,25 @@ Slide 1
 #s1 .content .image {
 	position: absolute;
 	top: 280px;
-	left: 200px;
+	left: 171px;
 	width: 700px;
 	height: 700px;
 	background: url('../img/splash-image.svg');
 }
+#s1 .content .intro {
+	position: absolute;
+	top: 280px;
+	left: 1032px;
+}
 #s1 .content .getStarted {
 	position: absolute;
 	top: 800px;
-	left: 900px;
+	left: 872px;
+}
+#s1 .content .logo {
+	position: absolute;
+	top: 1000px;
+	left: 1658px;
 }
 
 /*
@@ -274,10 +261,10 @@ Slide 2
 	text-align: center;
 	border: 1px solid rgba(113, 20, 113, 1);
 }
-#s2 .content .body .button:hover .image, #s2 .content .body .button.selected .image {
+#s2 .content .body .button.selected .image {
 	background-color: rgba(66, 14, 68, 1);
 }
-#s2 .content .body .button:hover .name, #s2 .content .body .button.selected .name {
+#s2 .content .body .button.selected .name {
 	color: rgba(66, 14, 68, 1);
 	border: 1px solid rgba(66, 14, 68, 1);
 }
@@ -371,10 +358,10 @@ Slide 3
 	border: 1px solid rgba(179, 35, 23, 1);
 	color: rgba(179, 35, 23, 1);
 }
-#s3 .content .body .third .button:hover .image, #s3 .content .body .third .button.selected .image {
+#s3 .content .body .third .button.selected .image {
 	background-color: rgba(127, 23, 18, 1);
 }
-#s3 .content .body .third .button:hover .name, #s3 .content .body .third .button.selected .name {
+#s3 .content .body .third .button.selected .name {
 	border: 1px solid rgba(127, 23, 18, 1);
 	color: rgba(127, 23, 18, 1);
 }
@@ -450,10 +437,10 @@ Slide 4
 	background-color: rgba(255, 255, 255, 1);
 	color: rgba(227, 128, 28, 1);
 }
-#s4 .content .body .airplane:hover .image, #s4 .content .body .airplane.selected .image {
+#s4 .content .body .airplane.selected .image {
 	background-color: rgba(165, 83, 10, 1);
 }
-#s4 .content .body .airplane:hover .name, #s4 .content .body .airplane.selected .name {
+#s4 .content .body .airplane.selected .name {
 	border: 1px solid rgba(165, 83, 10, 1);
 	color: rgba(165, 83, 10, 1);
 }
@@ -555,10 +542,10 @@ Slide 5
 	border: 1px solid rgba(43, 110, 130, 1);
 	color: rgba(43, 110, 130, 1);
 }
-#s5 .content .body .third .button:hover .image, #s5 .content .body .third .button.selected .image {
+#s5 .content .body .third .button.selected .image {
 	background-color: rgba(27, 73, 84, 1);
 }
-#s5 .content .body .third .button:hover .name, #s5 .content .body .third .button.selected .name {
+#s5 .content .body .third .button.selected .name {
 	border: 1px solid rgba(27, 73, 84, 1);
 	color: rgba(27, 73, 84, 1);
 }
@@ -623,7 +610,6 @@ Slide 6
 }
 #s6 .content .body .third:nth-child(1) {
 	left: 110px;
-	background-color: rgba(255, 255, 255, 1);
 }
 #s6 .content .body .third:nth-child(2) {
 	position: absolute;
@@ -641,6 +627,6 @@ Slide 6
 	top: 0px;
 	left: 0px;
 	width: 440px;
-	height: 72px;
+	height: 60px;
 	font-size: 28px;
 }
